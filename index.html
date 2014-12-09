@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ar">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' type='text/css' />
+<style type="text/css">
+body{padding-top:64px;text:#444;}
+.loading {background: rgba(128,128,128,0.35) url('/demo/img/loading.gif') no-repeat 50% 50%;}
+tt {font-weight:bold;color:#000;}
+</style>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<title>Declarative Ajax Operations Demo</title>
+	</head>
+<body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Declarative Ajax Operations</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/index.html">Demo</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Github <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Source code</a></li>
+                <li><a href="#">Issues</a></li>
+              </ul>
+            </li>
+          </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+		<li class="pull-right"><a href="https://github.com/muayyad-alsadi">Alsadi <img class="media-object" src="http://www.gravatar.com/avatar/22b3de0ed1d200ba1e747a066fe69280?s=24" width="24" height="24" alt="avatar"></a></li>
+      </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <div class="container content" id="mainContent">
+<div class="row">
+	<div class="col-sm-4">
+		<div class="panel panel-info">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">People</h3>
+            </div>
+            <div class="panel-body">
+				<div class="clearfix">
+					we have <span id="connected-count">6</span> connected people.<br/>
+					<a class="btn btn-primary" type="button" href="/demo/data/connected.txt" data-toggle="ajax-load" data-target="#connected-count" data-format="text">Refresh</a>&nbsp;
+					<a class="btn btn-danger" type="button" data-url="/demo/data/connected2.txt" data-toggle="ajax-load" data-target="#connected-count" data-format="text">Hack</a>
+                </div>
+			</div>
+		</div>
+		<hr/>
+			<div class="panel panel-primary">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">Posts <button class="btn btn-default pull-right" type="button" data-url="/demo/data/newpost.html" data-toggle="ajax-load" data-target="#main-pane">+</button></h3>
+            </div>
+            <div class="panel-body">
+              <ul>
+				  <li><a href="#" data-url="/demo/data/post1.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane">post 1</a></li>
+				  <li><a href="#" data-url="/demo/data/post2.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane">post 2</a></li>
+			</ul>
+            </div>
+          </div>
+			<div class="panel panel-info">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">Tweets <button class="btn btn-default pull-right" type="button" data-url="/demo/data/newpost.html" data-toggle="ajax-load" data-target="#main-pane">+</button></h3>
+            </div>
+            <div class="panel-body">
+              <ul>
+				  <li><a href="#" data-url="/demo/data/tweet1.html" data-toggle="ajax-load" data-target="#main-pane">tweet 1</a></li>
+				  <li><a href="#" data-url="/demo/data/tweet2.html" data-toggle="ajax-load" data-target="#main-pane">tweet 2</a></li>
+			</ul>
+            </div>
+          </div>
+			<div class="panel panel-danger">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">Issues <button class="btn btn-default pull-right" type="button" data-url="/demo/data/newpost.html" data-toggle="ajax-load" data-target="#main-pane">+</button></h3>
+            </div>
+            <div class="panel-body">
+              <ul>
+				  <li><a href="#" data-url="/demo/data/post1.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane">post 1</a></li>
+				  <li><a href="#" data-url="/demo/data/post2.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane">post 2</a></li>
+			</ul>
+            </div>
+          </div>
+
+
+
+
+
+	</div>
+	<div id="main-pane" class="col-sm-8">
+<!-- -->
+<h1>ajax_ops <small>Declarative Ajax Operations</small></h1>
+<div class="well">
+<p class="lead">Welcome to ajax-ops demo, a productive way to make ajax apps.</p>
+</div>
+<p>This is a single page app made using all static content. Most of the magic here is triggered by <tt>data-toggle="ajax-load"</tt>.</p>
+<p>The side-pane contains some buttons which do some ajax magic, click "demo" from nav bar to get back here.</p>
+<h2>Loading Content</h2>
+<p>
+As you can see the "refresh" button which is actually just an anchor tag &lt;a&gt;
+in people box that contains an "href" to the text file containing the new number to be shown in the counter "span"
+which is indicated using the selector like this <tt>data-target="#connected-count"</tt> and the type of this content is text
+<tt>data-format="text"</tt> which means if it contains markup they will be shown as is this is why the other button called "hack" did not show the alert.
+</p><p>
+Try the <tt>[+]</tt> button on the side panes, it loads HTML partial containing a form in the main pane.
+(you can use active forms in your web framework just make sure to render the partial not the entire page with full layout).
+The mark up that made this was very obvious:
+</p>
+<pre>
+&lt;button data-url="/demo/data/newpost.html" data-toggle="ajax-load" data-target="#main-pane"&gt;+&lt;/button&gt;
+</pre>
+<h2>Fetching Raw Date and Rendering it</h2>
+<p>
+You can fetch raw data in JSON formate from server then pass it to your favorite js templates like handlerbars.
+Just like the above we pointed to the json data using "href" or "data-url" and target selector,
+but the difference here that we passed template name <tt>data-template="post"</tt> (we have have <a href="/demo/handlebars/post.handlebars">a template called "post"</a> which renders the post content and its comments)
+</p>
+<pre>
+&lt;a href="#" data-url="/demo/data/post1.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane"&gt;post 1&lt;/a&gt;
+</pre>
+<p>The refresh button in the "post" view also work despite being newly added via ajax, it fetches fresh comments and add them at the top
+using <tt>data-how="prepend"</tt>
+</p>
+<pre>
+&lt;button class="btn btn-default" type="button" data-toggle="ajax-load" data-url="/demo/data/fresh.json" data-template="comments" data-target="#comments-box" data-how="prepend"&gt;refresh&lt;/button&gt;
+</pre>
+<h2>Ajax forms magic</h2>
+<p>
+Click on <tt>[+]</tt> and try to submit. it will use ajax to submit the form. 
+The magic comes from this simple attribute: <tt>onsubmit="return ajax_ops.submit_form(this);"</tt> which will submit the form and replace it with new contnt.
+To make this possibe using static files we used GET method to fetch a partail response but it will work on POST.
+</p>
+<h2>Handling errors</h2>
+<p>
+Click on "tweet 2" link on side pane which points to a non-exiting page (404). A template called "flashmsg" will be used.
+It will appear on the closest content class you can customize this using the following global setting:
+<tt>ajax_ops.flashmsg_opts.selector='.content:first'</tt>.
+</p>
+<h2>Complex multi-target operations</h2>
+<p>
+You can specify selectors that matches more than one element each specifies its own template.
+</p>
+<pre>
+&lt;a data-toggle="ajax-load" href="/posts/today.json" data-target=".posts"&gt;my link&lt;/a&gt;
+&lt;div class="posts" data-template="posts_titles"&gt;&lt;/div&gt;
+&lt;div class="posts" data-template="full_posts"&gt;&lt;/div&gt;
+</pre>
+<h2>Even more complex operations</h2>
+<p>
+You can use <tt>data-toggle="ajax-ops"</tt> instead of <tt>data-toggle="ajax-load"</tt>.
+Which instead of getting data or content it gets op-codes.
+Click on "tweet 1" link, you will see a button called "show more comments", clicking it will hide the button and append a text saying "no more comments" .
+I gets a list of operations each has 2 or 3 items, the operation, the target and the params
+</p>
+<pre>
+[
+    ["remove","#more-comments"],
+    ["load","#comments", {"how":"append", "text":"no more comments"}]
+]
+</pre>
+<p>
+The other button appends templated data beside removing the button.
+</p>
+<pre>
+[
+	["remove","#rel-posts"],
+	["load","#comments", {"how":"append", "template": "post", "data": {
+		"username":"Khaleel Tahseen", "content": "This is a SECOND test post", "comments": [{"username":"Ali Obada", "content": "this is a comment"}, {"username":"Khaleel Ahmed", "content": "this is another comment"}, {"username":"Ali Obada", "content": "this is a comment"}, {"username":"Khaleel Ahmed", "content": "this is another comment"}]
+		}
+	}]
+]
+</pre>
+<!-- -->
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="/demo/js/handlebars.runtime.min.js"></script>
+<script src="/demo/js/templates.js"></script>
+<script src="/ajax_ops.js"></script>
+<script src="/ajax_ops-modals.js"></script>
+<script>
+	ajax_ops.templates=Handlebars.templates;
+	Handlebars.partials = Handlebars.templates;
+	$('a[data-toggle]').click(function (e) {e.preventDefault()});
+</script>
+</body>
+</html>

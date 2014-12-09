@@ -1,0 +1,6 @@
+[
+	["remove","#rel-posts"],
+	["load","#comments", {"how":"append", "template": "post", "data": {
+		"username":"Khaleel Tahseen", "content": "This is a SECOND test post", "comments": [{"username":"Ali Obada", "content": "this is a comment"}, {"username":"Khaleel Ahmed", "content": "this is another comment"}, {"username":"Ali Obada", "content": "this is a comment"}, {"username":"Khaleel Ahmed", "content": "this is another comment"}]
+}
+}]]
