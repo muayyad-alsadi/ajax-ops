@@ -133,7 +133,7 @@ The mark up that made this was very obvious:
 <p>
 You can fetch raw data in JSON formate from server then pass it to your favorite js templates like handlerbars.
 Just like the above we pointed to the json data using "href" or "data-url" and target selector,
-but the difference here that we passed template name <tt>data-template="post"</tt> (we have have <a href="https://github.com/muayyad-alsadi/ajax-ops/blob/masterdemo/handlebars/post.handlebars">a template called "post"</a> which renders the post content and its comments)
+but the difference here that we passed template name <tt>data-template="post"</tt> (we have have <a href="https://github.com/muayyad-alsadi/ajax-ops/blob/master/demo/handlebars/post.handlebars">a template called "post"</a> which renders the post content and its comments)
 </p>
 <pre>
 &lt;a href="#" data-url="demo/data/post1.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane"&gt;post 1&lt;/a&gt;
@@ -152,7 +152,7 @@ To make this possibe using static files we used GET method to fetch a partail re
 </p>
 <h2>Handling errors</h2>
 <p>
-Click on "tweet 2" link on side pane which points to a non-exiting page (404). A template called "flashmsg" will be used.
+Click on "tweet 2" link on side pane which points to a non-exiting page (404). <a href="https://github.com/muayyad-alsadi/ajax-ops/blob/master/demo/handlebars/flashmsg.handlebars">A template called "flashmsg"</a> will be used.
 It will appear on the closest content class you can customize this using the following global setting:
 <tt>ajax_ops.flashmsg_opts.selector='.content:first'</tt>.
 </p>
