@@ -1,5 +1,10 @@
 # Declarative Ajax Operations
 
+## Live demo
+
+[Live demo](http://muayyad-alsadi.github.io/ajax-ops/)
+
+
 ## Running the demo
 
 The demo is just static files, you might want to place this directory in your server document root
