@@ -1,5 +1,7 @@
 # Declarative Ajax Operations
 
+Your easiest fastest way to have a single page web application with no single line of JavaScript code.
+
 ## Live demo
 
 [Live demo](http://muayyad-alsadi.github.io/ajax-ops/)
