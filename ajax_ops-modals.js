@@ -10,16 +10,16 @@ ajax_ops.modal_form=function(f, opts){
 	return ajax_ops.submit_form(f, o);
 };
 function ajax_modal(e){
-	var $target, modal_attr=e.getAttribute('data-modal-attr'), target=e.getAttribute('data-target'), url=e.getAttribute('data-url');
-	var attr={class:"modal hide fade", tabindex:"-1", role:"dialog", replace:false};
+	var $target, modal_attr=e.getAttribute('data-modal-attr'), target=e.getAttribute('data-target'), url=e.getAttribute('data-url') || e.getAttribute('href');
+	var attr={class:"modal fade", tabindex:"-1", role:"dialog", replace:false};
 	if (modal_attr) $.extend(true, attr, $.parseJSON(modal_attr));
 	if (attr.replace) $('.modal').modal('hide');
 	delete attr['replace'];
 	if (target) $target=$(target);
 	else $target=$('<div>').attr(attr);
-	$('body').modalmanager('loading');
+	$('body').addClass('loading');
 	$target.load(url, '', function(response, status, xhr){
-		$('body').modalmanager('loading');
+		$('body').removeClass('loading');
 		if (status != "error") $target.modal(); else self.flashmsg({type:'danger', html:'could not load modal dialog'});
 	});
 }

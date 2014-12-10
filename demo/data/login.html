@@ -1,0 +1,31 @@
+<form role="form" onsubmit="return ajax_ops.modal_form(this);" action="demo/data/login-failed.html" method="get">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Login</h4>
+      </div>
+      <div class="modal-body">
+<!-- content start -->
+<div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+    <span class="help-block">Don't have account, <a data-toggle="ajax-modal" data-url="demo/data/register.html" href="javascript:void(0)" data-modal-attr='{"replace":1}'>register now!</a></span>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <span class="help-block"><a data-toggle="ajax-modal" data-url="demo/data/forget-pass.html"   href="javascript:void(0)">forgot password?</a></span>
+  </div>
+
+<!-- content end -->
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-default btn-primary">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</form>
+
+

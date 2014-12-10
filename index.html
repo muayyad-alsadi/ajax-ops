@@ -45,7 +45,9 @@ tt {font-weight:bold;color:#000;}
           </ul>
 
       <ul class="nav navbar-nav navbar-right">
-		<li class="pull-right"><a href="https://github.com/muayyad-alsadi">Alsadi <img class="media-object" src="http://www.gravatar.com/avatar/22b3de0ed1d200ba1e747a066fe69280?s=24" width="24" height="24" alt="avatar"></a></li>
+            <li class="pull-right me" data-refresh-url="demo/data/me.json" data-template="profile_nav_link">
+                  <a data-toggle="ajax-modal" href="demo/data/login.html">login</a>
+            </li>
       </ul>
 
         </div><!--/.nav-collapse -->
@@ -88,6 +90,14 @@ tt {font-weight:bold;color:#000;}
 				  <li><a href="#" data-url="demo/data/tweet1.html" data-toggle="ajax-load" data-target="#main-pane">tweet 1</a></li>
 				  <li><a href="#" data-url="demo/data/tweet2.html" data-toggle="ajax-load" data-target="#main-pane">tweet 2</a></li>
 			</ul>
+            </div>
+          </div>
+			<div class="panel panel-success me" data-refresh-url="demo/data/me.json" data-template="add_comment">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">Add comment</h3>
+            </div>
+            <div class="panel-body">
+              <p>You need to <a data-toggle="ajax-modal" href="demo/data/login.html"><b>login</b></a> to be able to comment.</p>
             </div>
           </div>
 			<div class="panel panel-danger">

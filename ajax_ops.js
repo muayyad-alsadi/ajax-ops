@@ -99,7 +99,7 @@ self.refresh=function(e, params) {
 		$e=$(e);
 		params.el=e;
 		params.url=$e.attr('data-refresh-url') || $e.attr('data-url') || $e.attr('href');
-		load(params);
+		self.load(params);
 	}
 };
 self.exec_ops=function(options){
