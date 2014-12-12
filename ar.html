@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="ar">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' type='text/css' />
+	<link rel='stylesheet' href='//muayyad-alsadi.github.io/bootstrap-rtl/3.x/css/bootstrap.rtl.css' type='text/css' />
+<style type="text/css">
+body{padding-top:64px;text:#444;}
+.loading {background: rgba(128,128,128,0.35) url('demo/img/loading.gif') no-repeat 50% 50%;}
+tt {font-weight:bold;color:#000;direction:ltr;}
+pre {direction:ltr;}
+</style>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<title>استعراض لمكتبة ajax-ops</title>
+	</head>
+<body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">مكتبة عمليات AJAX التصريحية</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://muayyad-alsadi.github.io/ajax-ops/ar.html">الاستعراض</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Github <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="https://github.com/vision-as/ajax-ops">الكود المصدري</a></li>
+                <li><a href="https://github.com/vision-as/ajax-ops/issues">المشاكل</a></li>
+              </ul>
+            </li>
+            <li><a href="http://muayyad-alsadi.github.io/ajax-ops/">English</a></li>
+          </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+            <li class="me" data-refresh-url="demo/data/me.json" data-template="profile_nav_link">
+                  <a data-toggle="ajax-modal" href="demo/data/login.html">تسجيل الدخول</a>
+            </li>
+      </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <div class="container content" id="mainContent">
+<div class="row">
+	<div class="col-sm-4">
+		<div class="panel panel-info">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">الأشخاص</h3>
+            </div>
+            <div class="panel-body">
+				<div class="clearfix">
+					لدينا <span id="connected-count">6</span> من الأشخاص المتصلين.<br/>
+					<a class="btn btn-primary" type="button" href="demo/data/connected.txt" data-toggle="ajax-load" data-target="#connected-count" data-format="text">تحديث</a>&nbsp;
+					<a class="btn btn-danger" type="button" data-url="demo/data/connected2.txt" data-toggle="ajax-load" data-target="#connected-count" data-format="text">ثغرة</a>
+                </div>
+			</div>
+		</div>
+		<hr/>
+			<div class="panel panel-primary">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">المواضيع <button class="btn btn-default pull-left" type="button" data-url="demo/data/newpost.html" data-toggle="ajax-load" data-target="#main-pane">+</button></h3>
+            </div>
+            <div class="panel-body">
+              <ul>
+				  <li><a href="#" data-url="demo/data/post1.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane">الموضوع 1</a></li>
+				  <li><a href="#" data-url="demo/data/post2.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane">الموضوع 2</a></li>
+			</ul>
+            </div>
+          </div>
+			<div class="panel panel-info">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">تغريدات <button class="btn btn-default pull-left" type="button" data-url="demo/data/newpost.html" data-toggle="ajax-load" data-target="#main-pane">+</button></h3>
+            </div>
+            <div class="panel-body">
+              <ul>
+				  <li><a href="#" data-url="demo/data/tweet1.html" data-toggle="ajax-load" data-target="#main-pane">التغريدة الأولى</a></li>
+				  <li><a href="#" data-url="demo/data/tweet2.html" data-toggle="ajax-load" data-target="#main-pane">التغريدة الثانية</a></li>
+			</ul>
+            </div>
+          </div>
+			<div class="panel panel-success me" data-refresh-url="demo/data/me.json" data-template="add_comment">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">إضافة تعليق</h3>
+            </div>
+            <div class="panel-body">
+              <p>عليك <a data-toggle="ajax-modal" href="demo/data/login.html"><b>تسجيل الدخول</b></a> حتى تتمكن من التعليق.</p>
+            </div>
+          </div>
+			<div class="panel panel-danger">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">العلل <button class="btn btn-default pull-left" type="button" data-url="demo/data/newpost.html" data-toggle="ajax-load" data-target="#main-pane">+</button></h3>
+            </div>
+            <div class="panel-body">
+              <ul>
+				  <li><a href="#" data-url="demo/data/post1.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane">الموضوع 1</a></li>
+				  <li><a href="#" data-url="demo/data/post2.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane">الموضوع 2</a></li>
+			</ul>
+            </div>
+          </div>
+
+
+
+
+
+	</div>
+	<div id="main-pane" class="col-sm-8">
+<!-- -->
+<h1>ajax-ops <small>مكتبة للعمليات التفاعلية التصريحية</small></h1>
+<div class="well">
+<p class="lead">أهلا بك في استعراض ajax-ops، طريقة عمل تطبيقات ذات انتاجية عالية.</p>
+</div>
+<p>هذه الصفحة تطبيق من صفحة واحدة يعتمد على محتوى ساكن. أغلب العجائب التي تراها هنا يحفزها <tt>data-toggle="ajax-load"</tt>.</p>
+<p>الصندوق الجانبي يحتوي أزرار تقوم بعمليات AJAX عجيبة، اضغط على زر "الاستعراض" في الشريط العلوي للعودة لهذه الصفحة.</p>
+<h2>تحميل المحتوى</h2>
+<p>
+كما ترى زر "تحديث" الموجود في صندوق "الأشخاص الجانبي" هو مجرد رابط عبر وسم &lt;a&gt; له "href" تشير إلى رابط ملف نصي يحتوي العدد المراد إظهارة
+مكان الرقم الموسوم بوسم "span" وتم الإشارة له عبر المحدد selector بالقيمة <tt>data-target="#connected-count"</tt> وتم تحديد النوع
+كنص <tt>data-format="text"</tt> لهذا فإن وجود وسوم لن يتم معالجتها مما جعل الضغط على زر "ثغرة" لا ينفظ السكربت ولا يظهر التنبيه بل يطبعه كما هو.
+</p><p>
+اضغط <tt>[+]</tt> في أي من الصناديق الجانبية تحمل محتوى جزئي Partial HTML فيه نموذج استمارة في الصندوق الرئيسي.
+(في التطبيقات العملية يمكنك استعمال الاستمارات الفعالة active form في توليده عوضا عن ال full layout)
+تم عمل ذلك بطريقة بدهية جدا وهي:
+</p>
+<pre>
+&lt;button data-url="demo/data/newpost.html" data-toggle="ajax-load" data-target="#main-pane"&gt;+&lt;/button&gt;
+</pre>
+<h2>جلب بيانات خام وإخراجها</h2>
+<p>
+في قائمة المواضيع الجانبية انقر على "موضوع 1" حيث نجلب بيانات صافية بهيئة JSON من الخادم ثم تمريرها إلى أي نظام قوالب في جافاسكربت مثل handlerbars.
+بنفس الطريقة السابقة حددنا الرابط عبر href أو data-url والمحدد selector للعنصر المستهدف لكن الفرق هنا أننا حددنا اسم القالب عبر <tt>data-template="post"</tt>
+(حيث لدينا <a href="https://github.com/muayyad-alsadi/ajax-ops/blob/master/demo/handlebars/post.handlebars">قالب اسمه موضوع "post"</a>
+وهو يخرج لنا الموضوع والتعليقات التي عليه)
+</p>
+<pre>
+&lt;a href="#" data-url="demo/data/post1.json" data-toggle="ajax-load" data-template="post" data-target="#main-pane"&gt;post 1&lt;/a&gt;
+</pre>
+<p>زر التحديث داخل عرض الموضوع يعمل رغم أنه زرع بعد جهوزية الصفحة ذاك الزر يجلب التعليقات الحديثة ويزرعها في رأس التعليقات وذلك من خلال
+العلامة <tt>data-how="prepend"</tt>
+</p>
+<pre>
+&lt;button class="btn btn-default" type="button" data-toggle="ajax-load" data-url="demo/data/fresh.json" data-template="comments" data-target="#comments-box" data-how="prepend"&gt;refresh&lt;/button&gt;
+</pre>
+<h2>استمارات AJAX</h2>
+<p>
+اضغط على زر <tt>[+]</tt> وحاول إرسال النموذج. سيتم استعمال AJAX لإرسال النموذج للخادم وذلكن من خلال وضع 
+ <tt>onsubmit="return ajax_ops.submit_form(this);"</tt> 
+ والتي ترسل النموذج للخادم ثم تضع رد الخادم الجزئي مكان النموذج.
+لقد استعملنا طريقة GET لكن في التطبيقات الحقيقية عليك استعمال POST.
+</p>
+<h2>معالجة الأخطاء</h2>
+<p>
+الرابط إلى "التغريدة الثانية" يؤشر إلى صفحة غير موجودة 404. في تلك الحالة يتم تطبيق 
+<a href="https://github.com/muayyad-alsadi/ajax-ops/blob/master/demo/handlebars/flashmsg.handlebars">قالب اسمه "flashmsg"</a> 
+وإظهاره في أقرب محتوى يمكنك تخصيصه عبر الإعدادات العامة بالشكل التالي:
+<tt>ajax_ops.flashmsg_opts.selector='.content:first'</tt>.
+</p>
+<h2>العمليات المعقدة على أكثر من هدف</h2>
+<p>
+يمكنك استخدام محددات selectors تطابق أكثر من عنصر يمكن لكل عنصر أن يحتوي قالب مختلف خاص به لنفس البيانات المجلوبة
+</p>
+<pre>
+&lt;a data-toggle="ajax-load" href="/posts/today.json" data-target=".posts"&gt;my link&lt;/a&gt;
+&lt;div class="posts" data-template="posts_titles"&gt;&lt;/div&gt;
+&lt;div class="posts" data-template="full_posts"&gt;&lt;/div&gt;
+</pre>
+<section>
+<h2>الصناديق البائنة Modal</h2>
+<p>
+يمكن لصنادئق الحوار البائنة أن تصنع تجربة غنية من خلال ajax-modal و ajax-forms جرب ما يلي
+</p>
+<ul>
+	<li>اضغط زر تسجيل الدخول من الشريط العلوي أو من صندوق التعليقات الجانبي
+	<li>انقر على زر "نسيت كلمة السر" ولاحظ كيف يظهر صندوقين فوق بعضهما.
+	<li>أرسل طلب نسيان كلمة السر ثم أغلق صندوق نجاح العملية وعد لصندوق تسجيل الدخول.
+	<li>انقر زر "حساب جديد" ولاحظ أنه تلقائيا يحل محل صندوق الحوار الآخر ولا يظهر فوقه.
+	<li>اضغط على زر تسجيل الدخول الموجود في صندوق حساب جديد ولاحظ نفس الشيء.
+	<li>أرسل طلب تسجيل الدخول ولاحظ كيف يظهر فشل تسجيل الدخول.
+	<li>أرسل طلب تسجيل الدخول بعد أن فشل الأول ولاحظ كيف ينجح
+	<li>لاحظ أنه بعد تسجيل الدخول الناجح ظهر صورة المستخدم واسمه في الشريط العلوي وصندوق التعليق الجانبي
+</ul>
+<p>كيف تم عمل كل ذلك؟</p>
+<ul>
+	<li>أي رابط أو زر عليه <tt>data-toggle="ajax-modal"</tt> يؤدي النقر عليه إلى إظهار صندوق بائن يجلب من "href" أو "data-url"
+	<li>يتم إحاطة ما يعيده الخادم ب &gt;div&lt; عليها فئات بووتستراب الخاصة بالصندوق البائن (يمكن تخصيصها) ثم إظهارها
+	<li>كما في حالة رابط "حساب جديد" يمكن إحلال صندوق مكان الحالي عبر <tt>data-modal-attr='{"replace":1}'</tt>
+	<li>يمكن أن يحتوي الصندوق على استمارة من خلال <tt>onsubmit="return ajax_ops.modal_form(this);"</tt> المبنية على <tt>submit_form</tt> التي تحدثنا عنها سابقا.
+	<li>يمكن اخباره أن يغلق الصندوق عند النجاح بتمرير معاملات إلى <tt>modal_form</tt>
+	<li>الرد الذي أظهر نجاح تسجيل الدخول استعمل <tt>ajax_ops.refresh('.me');</tt> لتحديث كل العناصر المتعلقة بالمستخدم من خلال الفئة me
+	<li>الشريط العلوي وصندوق التعليق جلبا نفس البيانات وهي <tt>me.json</tt> لكن كل منهما استعمل قالب مختلف لإظهارها
+</ul>
+</section>
+<h2>علميات معقدة أكثر</h2>
+<p>
+يمكن استعمال <tt>data-toggle="ajax-ops"</tt> عوضا عن <tt>data-toggle="ajax-load"</tt>.
+والتي عوضا عن جلب محتوى تجلب أوامر أو عمليات يجب تنفيذها  op-codes.
+اضغط رابط "التغريدة الأولى" وستجد زر مكتوب عليه "أظهر المزيد من التعليقات" النقر عليه يؤدي إلى إخفاء الزر نفسه وإضافة نص "لا مزيد من التعليقات"
+
+هي تجلب قائمة عناصرها تتكون من عنصرين أو 3 هي العملية المطلوبة والهدف والمعاملات إن وجدت.
+</p>
+<pre>
+[
+    ["remove","#more-comments"],
+    ["load","#comments", {"how":"append", "text":"no more comments"}]
+]
+</pre>
+<p>
+الزر الآخر يجلب بيانات ويلبسها قالب ثم يضيفها إلى التعليقات إلى جانب حذف الزر نفسه.
+</p>
+<pre>
+[
+	["remove","#rel-posts"],
+	["load","#comments", {"how":"append", "template": "post", "data": {
+		"username":"Khaleel Tahseen", "content": "This is a SECOND test post", "comments": [{"username":"Ali Obada", "content": "this is a comment"}, {"username":"Khaleel Ahmed", "content": "this is another comment"}, {"username":"Ali Obada", "content": "this is a comment"}, {"username":"Khaleel Ahmed", "content": "this is another comment"}]
+		}
+	}]
+]
+</pre>
+<!-- -->
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="demo/js/handlebars.runtime.min.js"></script>
+<script src="demo/js/templates.js"></script>
+<script src="ajax_ops.js"></script>
+<script src="ajax_ops-modals.js"></script>
+<script>
+	ajax_ops.templates=Handlebars.templates;
+	Handlebars.partials = Handlebars.templates;
+	$('a[data-toggle]').click(function (e) {e.preventDefault()});
+</script>
+</body>
+</html>
