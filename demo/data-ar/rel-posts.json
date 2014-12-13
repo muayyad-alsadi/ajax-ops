@@ -1,0 +1,6 @@
+[
+	["remove","#rel-posts"],
+	["load","#comments", {"how":"append", "template": "post", "data": {
+		"username":"خليل تحسين", "content": "هذا موضوع آخر", "comments": [{"username":"علي عبادة", "content": "هذا تعليق"}, {"username":"خليل أحمد", "content": "هذا تعليق آخر"}, {"username":"Ali Obada", "content": "this is a comment"}, {"username":"خليل أحمد", "content": "هذا تعليق آخر"}]
+}
+}]]

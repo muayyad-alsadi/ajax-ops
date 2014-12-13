@@ -10,12 +10,12 @@
 <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-    <span class="help-block">Don't have account, <a data-toggle="ajax-modal" href="demo/data/register.html">register now!</a></span>
+    <span class="help-block">Don't have account, <a data-toggle="ajax-modal" data-modal-attr='{"replace":1}' href="#" data-url="demo/data/register.html">register now!</a></span>
   </div>
   <div class="form-group has-error">
     <label for="exampleInputPassword1" class="control-label">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    <span id="helpBlock" class="help-block">invalid password, <a href="#">forgot password?</a></span>
+    <span id="helpBlock" class="help-block">invalid password, <a data-toggle="ajax-modal" data-url="demo/data/forget-pass.html"   href="javascript:void(0)">forgot password?</a></span>
     
   </div>
 

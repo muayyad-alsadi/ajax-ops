@@ -1,0 +1,24 @@
+<form role="form" onsubmit="return ajax_ops.submit_form(this);" action="demo/data-ar/submit.html" method="get">
+<div class="alert alert-danger fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      <h4>حصل خطأ ما!</h4>
+      <p>قاعدة البيانات غير متصلة</p>
+</div>
+
+
+  <div class="form-group has-error">
+    <label for="exampleInputEmail1">البريد الإلكتروني</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="أدخل بريدك الإلكتروني">
+    <p>هذا البريد مستخدم مسبقا</p>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">كلمة السر</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="كلمة السر هنا">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> اختر هذا
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">إرسال</button>
+</form>

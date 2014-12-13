@@ -1,0 +1,17 @@
+<div class="media">
+  <a class="pull-right" href="#">
+    <img class="media-object" src="demo/img/avatar.png" alt="avatar" width="96" height="96" />
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">{{username}} <span class="muted pull-left">now</span></h4>
+    <blockquote>
+  <p>{{content}}</p>
+  <button class="btn btn-default" type="button" data-toggle="ajax-load" data-url="demo/data-ar/fresh.json" data-template="comments" data-target="#comments-box" data-how="prepend">تحديث</button>
+<div id="comments-box">
+  {{# comments}}
+	{{> comment}}
+  {{/ comments}}
+</div>
+</blockquote>
+  </div>
+</div>
