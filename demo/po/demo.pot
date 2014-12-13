@@ -1,0 +1,41 @@
+msgid ""
+msgstr "Content-Type: text/plain;\n"
+
+#: handlebars-i18n/add_comment.handlebars:2
+msgid "Add Comment"
+msgstr ""
+
+#: handlebars-i18n/add_comment.handlebars:7
+#: handlebars-i18n/comment.handlebars:2
+#: handlebars-i18n/post.handlebars:2
+msgid "_start"
+msgstr ""
+
+#: handlebars-i18n/add_comment.handlebars:12
+msgid "add your comment here"
+msgstr ""
+
+#: handlebars-i18n/add_comment.handlebars:14
+#: handlebars-i18n/comment.handlebars:6
+#: handlebars-i18n/post.handlebars:6
+msgid "_end"
+msgstr ""
+
+#: handlebars-i18n/add_comment.handlebars:14
+msgid "comment"
+msgstr ""
+
+#: handlebars-i18n/comment.handlebars:6
+#: handlebars-i18n/post.handlebars:6
+msgid "now"
+msgstr ""
+
+#: handlebars-i18n/post.handlebars:9
+msgid "{0} comment"
+msgid_plural "{0} comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: handlebars-i18n/post.handlebars:10
+msgid "refresh"
+msgstr ""
